@@ -12,7 +12,7 @@ Using [Generator Babel Boilerplate](https://github.com/babel/generator-babel-boi
 Fuzzy Search provides search results from a search term (`term`) and an array of strings or objects (`library`). `FS.search('lo', ['hello', 'lingo'])`.
 
 # Exact / Fuzzy
-Fuzzy search returns two arrays of matches, `exact` and `fuzzy`. `exact` matches contain the exact search term, ordered by proximity to the beginning of the string in which it was found. `fuzzy` matches contain the search term even if there are characters in between.
+So that you can prioritize types of matches, fuzzy search returns two arrays of matches, `exact` and `fuzzy`. `exact` matches contain the exact search term, ordered by proximity to the beginning of the string in which it was found. `fuzzy` matches contain the search term even if there are characters in between.
 
 For example, if I search for `'jake'` and have two strings to search, `['jakealbaugh', 'jackeagle']`, there is an exact match '**jake**albaugh' and fuzzy match '**ja**c**ke**agle'.
 
@@ -63,7 +63,9 @@ FS.search('lo', ['hello', 'lingo']);
 ```
 
 ## Substrings
-As you can see, a match has a handful of properties returned with it as well. The most important of these properties is the `_substrings` array. What good is a match if you have no way of displaying it? You can use this value to display the match in a UI by highlighting the `substrings` with a `match` value of `true`.
+As you can see, a match has a handful of properties returned with it as well. The most important of these properties is the `_substrings` array. What good is a match if you have no way of displaying it? You can use this value to display the match in a UI by highlighting the `substrings` with a `match` value of `true`. 
+
+Match `_score` is relative to the match type, so the score of a `fuzzy` match has no relation to the score of an `exact` one.
 
 
 # Usage with Objects

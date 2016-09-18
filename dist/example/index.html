@@ -12,20 +12,16 @@
   <article>
 
     <h1>Basic Usage</h1>
-    <h2>Input</h2>
+    <p><code>EXAMPLE 1</code> in console.</p>
     <pre id="example-1"><code class="js">FS.search('lo', ['hello', 'lingo']);</code></pre>
-    <h2>Output</h2>
-    <pre id="run-example-1"></pre>
 
     <h1>Usage with Objects</h1>
-    <h2>Input</h2>
+    <p><code>EXAMPLE 2</code> in console.</p>
     <pre id="example-2"><code class="js">var string_lib = [
   { id: 1, string: 'hello', YOUR_ATTR: false },
   { id: 2, string: 'lingo', YOUR_ATTR: false }
 ];
 FS.search('lo', string_lib);</code></pre>
-    <h2>Output</h2>
-    <pre id="run-example-2"></pre>
 
   </article>
 
@@ -39,14 +35,11 @@ FS.search('lo', string_lib);</code></pre>
   </script>
   <script>
     /* run all examples. with corresponding blocks */
-    var runnable_blocks = document.querySelectorAll('pre[id^="run-example"]');
-    runnable_blocks.forEach(function(block) {
-      var source = document.querySelector('#' + block.id.replace('run-', '') + ' > code');
-      var code_block = document.createElement('code');
-      code_block.className = 'js';
-      code_block.innerHTML = JSON.stringify(eval(source.innerHTML), null, 2);
-      block.appendChild(code_block);
-      hljs.highlightBlock(code_block);
+    var runnable_blocks = document.querySelectorAll('pre[id^="example-"]');
+    runnable_blocks.forEach(function(block, i) {
+      var source = document.querySelector('#' + block.id + ' > code');
+      console.log('EXAMPLE ' + (i+1));
+      console.log(eval(source.innerHTML));
       hljs.highlightBlock(source);
     });
 
