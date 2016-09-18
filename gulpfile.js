@@ -49,6 +49,10 @@ function lintGulpfile() {
 }
 
 function build() {
+  // copy over the example file
+  gulp.src(path.join('src', config.exampleFilePath, config.exampleFileName))
+    .pipe(gulp.dest(path.join(destinationFolder, config.exampleFilePath)));
+
   return gulp.src(path.join('src', config.entryFileName))
     .pipe(webpackStream({
       output: {
@@ -56,15 +60,18 @@ function build() {
         libraryTarget: 'umd',
         library: config.mainVarName
       },
-      // Add your own externals here. For instance,
-      // {
-      //   jquery: true
-      // }
-      // would externalize the `jquery` module.
+      // Add your own externals here.
       externals: {},
       module: {
         loaders: [
-          {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
+          {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+            query: {
+              presets: ['es2015']
+            }
+          }
         ]
       },
       devtool: 'source-map'
