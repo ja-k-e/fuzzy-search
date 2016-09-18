@@ -1,10 +1,11 @@
-# Fuzzy Search
-
-A JavaScript plugin to find exact and fuzzy matches in a library of strings.
-
 [![Travis build status](http://img.shields.io/travis/jakealbaugh/fuzzy-search.svg?style=flat)](https://travis-ci.org/jakealbaugh/fuzzy-search)
 [![Dependency Status](https://david-dm.org/jakealbaugh/fuzzy-search.svg)](https://david-dm.org/jakealbaugh/fuzzy-search)
 [![devDependency Status](https://david-dm.org/jakealbaugh/fuzzy-search/dev-status.svg)](https://david-dm.org/jakealbaugh/fuzzy-search#info=devDependencies)
+
+# Fuzzy Search
+A JavaScript plugin to find exact and fuzzy matches in a library of strings.
+
+Basic usage example: [codepen.io/jakealbaugh/pen/wzzrmX](http://codepen.io/jakealbaugh/pen/wzzrmX/)
 
 Using [Generator Babel Boilerplate](https://github.com/babel/generator-babel-boilerplate).
 
