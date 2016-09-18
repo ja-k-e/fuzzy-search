@@ -14,7 +14,7 @@ Fuzzy Search provides search results from a search term (`term`) and an array of
 # Exact / Fuzzy
 Fuzzy search returns two arrays of matches, `exact` and `fuzzy`. `exact` matches contain the exact search term, ordered by proximity to the beginning of the string in which it was found. `fuzzy` matches contain the search term even if there are characters in between.
 
-For example, if I search for `'jake'` and have two strings to search, `['jakealbaugh', 'jackeagle']`, there is an _exact_ match `'jakealbaugh'` and _fuzzy_ match `'jackeagle'`.
+For example, if I search for `'jake'` and have two strings to search, `['jakealbaugh', 'jackeagle']`, there is an exact match '**jake**albaugh' and fuzzy match '**ja**c**ke**agle'.
 
 # Basic Usage
 In its most basic form, `FS.search` uses a search term and a simple array of strings.
