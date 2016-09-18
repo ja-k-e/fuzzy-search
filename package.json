@@ -52,6 +52,8 @@
   },
   "babelBoilerplateOptions": {
     "entryFileName": "fuzzy-search.js",
-    "mainVarName": "fuzzySearch"
+    "mainVarName": "FS",
+    "exampleFileName": "index.html",
+    "exampleFilePath": "example"
   }
 }

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fuzzy Search Example</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- includes highlight js stylesheet -->
+  <link rel="stylesheet" href="//codepen.io/jakealbaugh/pen/c15b1210aa25f092b1811956a099a0c3.css">
+</head>
+<body>
+
+  <article>
+
+    <h1>Basic Usage</h1>
+    <h2>Input</h2>
+    <pre id="example-1"><code class="js">FS.search('lo', ['hello', 'lingo']);</code></pre>
+    <h2>Output</h2>
+    <pre id="run-example-1"></pre>
+
+    <h1>Usage with Objects</h1>
+    <h2>Input</h2>
+    <pre id="example-2"><code class="js">var string_lib = [
+  { id: 1, string: 'hello', YOUR_ATTR: false },
+  { id: 2, string: 'lingo', YOUR_ATTR: false }
+];
+FS.search('lo', string_lib);</code></pre>
+    <h2>Output</h2>
+    <pre id="run-example-2"></pre>
+
+  </article>
+
+  <!-- highlight js -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+
+  <!-- demo -->
+  <script src="../fuzzy-search.js"></script>
+  <script>
+    var object_lib = [{ key: '123', string: 'hello' }, { key: '456', string: 'lingo' }];
+  </script>
+  <script>
+    /* run all examples. with corresponding blocks */
+    var runnable_blocks = document.querySelectorAll('pre[id^="run-example"]');
+    runnable_blocks.forEach(function(block) {
+      var source = document.querySelector('#' + block.id.replace('run-', '') + ' > code');
+      var code_block = document.createElement('code');
+      code_block.className = 'js';
+      code_block.innerHTML = JSON.stringify(eval(source.innerHTML), null, 2);
+      block.appendChild(code_block);
+      hljs.highlightBlock(code_block);
+      hljs.highlightBlock(source);
+    });
+
+    /* other non example blocks that arent covered in run */
+    var blocks = document.querySelectorAll('pre:not([id^="example-"]) code');
+    blocks.forEach(function(block) {
+      hljs.highlightBlock(block);
+    });
+  </script>
+  <!-- /demo -->
+</body>
+</html>
